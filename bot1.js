@@ -6,7 +6,7 @@ const creds={
 	
 }
 
-const{comment} = botClient.connect(creds)
+const{comment, stream} = botClient.connect(creds)
 /*
 finction getMessage (text){
 	switch(text) {
@@ -62,11 +62,55 @@ comment.onDirect(async message=>{
 	const to = message.data.content.from
 	const { data: {text}}= message.data.content.att[0]
 	
-	
+	/*if (text.match(/create/)){
+		const name = 'stream112';
+		const res = await stream.create(teamId, {name: name})
+		//console.log(res)
+		streamId = res.data.id
+		stream.setUser(teamId, {id: streamId, userId: to})
+		stream.setAdmin(teamId, {id: streamId, userId: to})
+		//stream.setName(teamId, '123')
+		const att = [{type:'text', data:{text: JSON.stringify(res)}}];
+		//console.log(att)
+		await comment.create(teamId, {to,att})
+		//botPost("stream created")
+		
+	}*/
+	/*if(text.match(/del/)){
+		stream.delete(teamId, '5a54bc4d8b3b170015b4159d')
+		const att = [ {type:'text', data:{text: JSON.stringify(res) } } ];
+    	await comment.create(teamId, {to, att})
+	}*/
+	if (text.match(/read bots/)) {
+    	const res = await stream.read(teamId, {})
+    	//console.log (res)
+    	const att = [ {type:'text', data:{text: JSON.stringify(res) } } ];
+    	await comment.create(teamId, {to, att})
+    }
+	/*if (text.match(/create1/)){
+		const answer = "111";
+		const name = 'stream111';
+		stream.create(name, {name: name});
+		//console.log(res)
+		//streamId = res.data.id;
+		//stream.setUser(teamId, {id: streamId, userId: to})
+		//stream.setAdmin(teamId, {id: streamId, userId: to})
+		//const att = [{type:'text', data:{text: JSON.stringify(res)}}];
+		//console.log(att)
+		//await comment.create(name, {to,att})
+		return;
+		
+	}*/
+	/*if(text.match(/get stream/)){
+		const res = await stream.read(teamId, {id:''})
+		const att = [{type:'text',data:{text: JSON.stringify(res)}}];
+		await comment.create(teamId, {to,att})
+	}*/
 	if(text.match(/hello/)){
 		const answer = "Enter your day";
 		const att = ([{type : 'text', data:{text: answer}}]);
 		await comment.create(teamId, {to, att})
+		
 		//const note = comment.create(teamId, {to, att});
 		return ;
 		
