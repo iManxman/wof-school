@@ -1,18 +1,18 @@
 {
   "name": "imanxman",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "set WS_ENDPOINT = https://ws-bots.teslatele.com/",
-    "start": "node index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "",
+  "main": "notes.js",
   "dependencies": {
-    "bot-client": "^2.0.0"
+    "bot-client": "git+https://github.com/xenbyte/bot-client.git",
+    "mongodb": "^3.0.1",
+    "nodemon": "^1.14.11"
   },
   "devDependencies": {},
-  "description": ""
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "WS_ENDPOINT=https://ws-bots.teslatele.com/ nodemon notes.js"
+  },
+  "author": "",
+  "license": "ISC"
 }
