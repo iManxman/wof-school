@@ -7,7 +7,8 @@
     "bot-client": "git+https://github.com/xenbyte/bot-client.git",
     "mongodb": "^3.0.1",
     "nodemon": "^1.14.11",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "shortid": "^2.2.8"
   },
   "devDependencies": {},
   "scripts": {
