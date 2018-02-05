@@ -6,12 +6,13 @@
   "dependencies": {
     "bot-client": "git+https://github.com/xenbyte/bot-client.git",
     "mongodb": "^3.0.1",
-    "nodemon": "^1.14.11"
+    "nodemon": "^1.14.11",
+    "request": "^2.83.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "WS_ENDPOINT=https://ws-bots.teslatele.com/ nodemon notes.js"
+    "start": "WS_ENDPOINT=https://ws-bots.teslatele.com/ nodemon notes.js"
   },
   "author": "",
   "license": "ISC"
